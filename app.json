@@ -1,0 +1,139 @@
+{
+  "name": "Awddy",
+  "namespace": "Awddy",
+  "version": "1.0.0.0",
+  "framework": "ext",
+  "template": "moderndesktop",
+  "indexHtmlPath": "index.html",
+  "requires": [
+    "font-awesome"
+  ],
+
+  "builds": {
+    "desktop": {
+      "toolkit": "modern",
+      "theme": "theme-material",
+      "sass": {
+        "generated": {
+          "var": "sass/save.scss",
+          "src": "sass/save"
+        }
+      }
+    }
+  },
+
+  "classpath": ["app/src"],
+  "overrides": ["app/overrides"],
+
+  "sass": {
+    "namespace": "Awddy",
+
+    "etc": [
+      "sass/etc/all.scss"
+    ],
+    "var": [
+      "app/sass/var.scss"
+    ],
+    "src": [
+      "app/src/sass/src.scss"
+    ]
+  },
+
+  "resources": [
+    { "path": "resources" }
+  ],
+
+  "output": {
+    "base": "${workspace.build.dir}/${build.environment}/${app.name}",
+    "page": "index.html",
+    "manifest": "generatedFiles/${build.id}.json",
+    "js": "generatedFiles/${build.id}/app.js",
+    "appCache": {"enable": false},
+    "resources": {
+      "shared": "resources"
+    }
+  },
+
+  "fashion": {
+   "missingParameters": "error",
+    "inliner": {"enable": false}
+  },
+
+  "js": [
+  ],
+
+  "classic": {"js": []},
+  "modern": {"js": []},
+
+  "css": [
+    {
+      "path": "${build.out.css.path}",
+      "bundle": true,
+      "exclude": ["fashion"]
+    }
+  ],
+
+  "loader": {
+    "cache": false,
+    "cacheParam": "_dc"
+  },
+
+  "production": {
+    "js": [
+      {"path": "app.js", "bundle": true},
+      {"path": "${app.webpack.bundle}", "compress": false }
+    ],
+    "output": {
+      "appCache": {
+        "enable": false,
+        "path": "cache.appcache"
+      }
+    },
+    "loader": {
+      "cache": "${build.timestamp}"
+    },
+    "cache": {
+      "enable": true
+    },
+    "compressor": {
+      "type": "yui"
+    }
+  },
+  "testing": {
+    "js": [
+      {"path": "app.js", "bundle": true},
+      {"path": "${app.webpack.bundle}", "compress": false }
+    ]
+  },
+  "development": {
+    "js": [
+      {"path": "app.js", "bundle": true},
+      {"path": "main.js"}
+    ],
+    "watch": {
+      "delay": 250
+    }
+  },
+
+  "bootstrap": {
+    "base": "${app.dir}",
+    "manifest": "generatedFiles/${build.id}.json",
+    "microloader": "generatedFiles/bootstrap.js",
+    "css": "generatedFiles/bootstrap.css"
+  },
+
+  "cache": {
+      "enable": false,
+      "deltas": "${build.id}/deltas"
+  },
+
+  "appCache": {
+    "cache": ["index.html"],
+    "network": ["*"],
+    "fallback": []
+  },
+
+  "archivePath": "archive/${build.id}",
+  "ignore": ["(^|/)CVS(/?$|/.*?$)"],
+  "id": "a437a054-adda-4503-8941-d3c02e0bfbaf"
+}

@@ -1,3 +1,9 @@
+# Sencha
+build
+generatedFiles
+cordova
+node_modules
+
 # Logs
 logs
 *.log
