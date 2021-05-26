@@ -29,10 +29,11 @@
     "namespace": "Awddy",
 
     "etc": [
-      "sass/etc/all.scss"
+      "app/sass/etc/all.scss"
     ],
     "var": [
-      "app/sass/var.scss"
+      "app/sass/var/all.scss",
+      "app/sass/var"
     ],
     "src": [
       "app/src/sass/src.scss"

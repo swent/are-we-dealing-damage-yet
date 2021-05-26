@@ -1,7 +1,10 @@
 Ext.define('Awddy.Application', {
 	extend: 'Ext.app.Application',
 	name: 'Awddy',
-	requires: ['Awddy.*'],
+	requires: [
+		'Awddy.*',
+		'Ext.layout.*',
+	],
 	defaultToken: 'homeview',
 
 	removeSplash: function () {
@@ -11,9 +14,8 @@ Ext.define('Awddy.Application', {
 	},
 
 	launch: function () {
-		this.removeSplash()
-		var whichView = 'mainview'
-		Ext.Viewport.add([{xtype: whichView}])
+		this.removeSplash();
+		Ext.Viewport.add([{ xtype: 'awddy.viewport' }])
 	},
 
 	onAppUpdate: function () {
