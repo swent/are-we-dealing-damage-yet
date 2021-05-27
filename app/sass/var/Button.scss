@@ -1,13 +1,21 @@
-$button-text-transform: unset;
-$button-border-radius: $awddy-radius-default;
+/* Sizing */
+$button-padding: 0.375rem 0.75rem;
+$button-padding-big: 0.5rem 0.75rem;
 
+/* Colors */
 $button-background-color: saturate(lighten($base-color, 41%), 17%);
 $button-hovered-background-color: saturate(lighten($base-color, 33%), 17%);
 $button-focused-background-color: $button-hovered-background-color;
 $button-pressed-background-color: $base-color;
-
 $button-color: $color;
-$button-font-weight: 500;
+
+/* Text */
+$button-font-family: 'RobotoCondensed';
+$button-font-weight: 400;
+$button-text-transform: unset;
+
+/* Border */
+$button-border-radius: $awddy-radius-default;
 
 /* ##################################################
    # Awddy textfield styles

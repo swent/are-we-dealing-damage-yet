@@ -2,6 +2,9 @@ Ext.define('Awddy.view.main.CharacterList', {
     extend: 'Ext.Container',
     xtype: 'awddy.main.characterlist',
     classCls: 'awddy-main-characterlist',
+    requires: [
+        // 'Ext.grid.Grid ',
+    ],
 
     layout: 'vbox',
     items: [{
@@ -23,20 +26,32 @@ Ext.define('Awddy.view.main.CharacterList', {
             text: 'Create New',
         }],
     }, {
-        xtype: 'container',
-        reference: 'list',
-        cls: 'list',
-        layout: 'vbox',
-        items: [{
-            xtype: 'awddy.widget.characterlistentry',
-            name: 'Svnt',
-            talents: '7 / 41 / 3',
-            date: '30-03-2021',
+        xtype: 'grid',
+        reference: 'grid',
+        cls: 'grid',
+        store: {
+            type: 'awddy.characters',
+        },
+        columns: [{
+            text: 'Faction',
+            dataIndex: 'faction',
+            width: 70,
         }, {
-            xtype: 'awddy.widget.characterlistentry',
-            name: 'Ayuvena test test test test11',
-            talents: '0 / 45 / 10',
-            date: '30-03-2021',
+            text: 'Name',
+            dataIndex: 'name',
+            flex: 1,
+        }, {
+            text: 'Talents',
+            dataIndex: 'talents',
+            width: 100,
+        }, {
+            text: 'Last DPS',
+            dataIndex: 'dps',
+            width: 100,
+        }, {
+            text: 'Last Change',
+            dataIndex: 'changeDate',
+            width: 100,
         }],
     }],
 });

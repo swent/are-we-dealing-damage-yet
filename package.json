@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "npm run dev",
-    "clean": "rimraf build",
+    "clean": "rimraf build && rimraf dist",
     "dev": "webpack-dev-server --env.profile=desktop --env.verbose=no --env.port=8080 --env.browser=no",
     "build": "npm run clean && cross-env webpack --env.profile=desktop --env.environment=production --env.treeshake=yes",
     "build:testing": "npm run clean && cross-env webpack --env.profile=desktop --env.treeshake=yes --env.cmdopts=--testing"

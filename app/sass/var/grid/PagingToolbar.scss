@@ -1,8 +1,13 @@
 .x-toolbar.x-pagingtoolbar {
   border-top: 1px solid #d9d9d9 !important;
 
-  > .x-pagingtoolbar-body-el > .x-pagingtoolbar-summary {
-    font-size: $font-size;
-    font-weight: normal;
+  > .x-pagingtoolbar-body-el {
+    padding: 0.1875rem 0.3125rem;
+    min-height: auto;
+
+    > .x-pagingtoolbar-summary {
+      font-size: $font-size;
+      font-weight: normal;
+    }
   }
 }

@@ -5,7 +5,7 @@ Ext.define('Awddy.Application', {
 		'Awddy.*',
 		'Ext.layout.*',
 	],
-	defaultToken: 'homeview',
+	// defaultToken: 'homeview',
 
 	removeSplash: function () {
 		Ext.getBody().removeCls('launching')

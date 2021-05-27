@@ -1,4 +1,6 @@
 const path = require('path');
+const fs = require('fs');
+const performance = require('perf_hooks').performance;
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
 const portfinder = require('portfinder');
 
@@ -70,7 +72,88 @@ module.exports = async function (env) {
         watch: watch,
         verbose: verbose,
         cmdopts: cmdopts
-      })
+      }),
+      {
+        apply: (compiler) => {
+          compiler.hooks.done.tap('font.patcher', (compilation) => {
+            console.log('  > Running font patcher plugin ...');
+            const startTime = performance.now();
+
+            try {
+              /* Identify css files that need to be searched / patched */
+              const mode = compilation.compilation.options.mode;
+              const cssPath = path.resolve(__dirname, mode === 'production' ? 'dist' : path.resolve('build', 'development', 'Awddy'), 'resources');
+              const filesToPatch = fs.readdirSync(cssPath)
+                                     .filter(file => file.startsWith('Awddy-all') && file.endsWith('.css'))
+                                     .map(file => path.resolve(cssPath, file));
+
+              /* Search in files and do the patching */
+              const fontFaceRegex = /@font-face[\s]*{[^}]*}/gi;
+              filesToPatch.forEach(file => {
+                /* Read file */
+                let content = fs.readFileSync(file, { encoding: 'utf8' }),
+                    result = content,
+                    regexResult;
+                /* Search for font faces in css */
+                while (regexResult = fontFaceRegex.exec(content)) {
+                  if (regexResult[0].includes('font-awesome') || !regexResult[0].includes('woff')) {
+                    result = result.replace(regexResult[0], '');
+                  }
+                }
+                /* Write patched content if changed */
+                if (content.length !== result.length) {
+                  fs.writeFileSync(file, result, { encoding: 'utf8' });
+                }
+              });
+
+              /* Delete font folders / files */
+              const fontRobotoPath = path.resolve(cssPath, 'fonts', 'roboto');
+              if (fs.existsSync(fontRobotoPath)) {
+                fs.rmdirSync(fontRobotoPath, { recursive: true });
+              }
+              const fontAwesomePath = path.resolve(cssPath, 'font-awesome');
+              if (fs.existsSync(fontAwesomePath)) {
+                fs.rmdirSync(fontAwesomePath, { recursive: true });
+              }
+              const fontExtPath = path.resolve(cssPath, 'font-ext');
+              if (fs.existsSync(fontExtPath)) {
+                fs.rmdirSync(fontExtPath, { recursive: true });
+              }
+
+              console.log(`    Success in ${(performance.now() - startTime).toFixed(0)}ms !`);
+            } catch (err) {
+              console.error(` !  Plugin error encountered: ${err.message}${err.stack}`);
+            }
+          });
+        }
+      }, {
+        apply: (compiler) => {
+          compiler.hooks.done.tap('preload.patcher', (compilation) => {
+            const mode = compilation.compilation.options.mode;
+
+            if (mode === 'production') {
+              console.log('  > Running preload patcher plugin ...');
+              const startTime = performance.now();
+
+              try {
+                const preloadRegex = /<!-- Start-Preloads -->([. \r\na-z<>!\-="/0-9]*)<!-- End-Preloads -->/igm,
+                      indexHtmlFilename = path.resolve(__dirname, 'dist', 'index.html'),
+                      indexHtmlContent = fs.readFileSync(indexHtmlFilename, { encoding: 'utf8' }),
+                      result = preloadRegex.exec(indexHtmlContent),
+                      patchedContent = indexHtmlContent
+                        .replace(
+                            result[0],
+                            result[0].replace(/build\/development\/Awddy\/resources/gi, 'resources'));
+                fs.writeFileSync(indexHtmlFilename, patchedContent, { encoding: 'utf8' });
+
+                console.log(`    Success in ${(performance.now() - startTime).toFixed(0)}ms !`);
+              } catch (err) {
+                console.error(` !  Plugin error encountered: ${err.message}${err.stack}`);
+              }
+            }
+          });
+        }
+      }
     ]
     return {
       mode: environment,
