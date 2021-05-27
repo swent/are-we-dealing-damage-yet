@@ -1,0 +1,28 @@
+/* Overall dialog */
+$messagebox-border-radius: $awddy-radius-default;
+$messagebox-border-radius-big: $messagebox-border-radius;
+
+/* Header sizing */
+$messagebox-header-min-height: $dialog-header-min-height;
+$messagebox-header-min-height-big: $messagebox-header-min-height;
+$messagebox-header-padding: 0.375rem 0.75rem;
+$messagebox-header-padding-big: $messagebox-header-padding;
+$messagebox-header-title-padding: $dialog-header-title-padding;
+$messagebox-header-title-padding-big: $messagebox-header-title-padding;
+
+/* Header colors / font-sizes */
+$messagebox-header-background-color: $dialog-header-background-color;
+$messagebox-header-color: $dialog-header-color;
+$messagebox-header-icon-color: $messagebox-header-color;
+$messagebox-header-font-size: $dialog-header-font-size;
+$messagebox-header-font-size-big: $messagebox-header-font-size;
+$messagebox-header-font-weight: $dialog-header-font-weight;
+$messagebox-header-line-height: $dialog-header-line-height;
+$messagebox-header-line-height-big: $messagebox-header-line-height;
+$messagebox-tool-color: $messagebox-header-color;
+$messagebox-tool-disabled-opacity: $dialog-tool-disabled-opacity;
+
+/* Body */
+$messagebox-body-padding: 0.75rem;
+$messagebox-body-padding-big: $messagebox-body-padding;
+$messagebox-body-color: $dialog-body-color;

@@ -1,0 +1,11 @@
+$field-label-color: $color;
+$field-disabled-label-color: opacify($disabled-color, 0.2);
+$field-box-label-color: $field-label-color;
+$field-disabled-box-label-color: $field-disabled-label-color;
+
+/* Custom radius variable / rule */
+$field-input-border-radius: $awddy-radius-default;
+.x-field .x-input-wrap-el,
+.x-field .x-body-el {
+  border-radius: $field-input-border-radius;
+}

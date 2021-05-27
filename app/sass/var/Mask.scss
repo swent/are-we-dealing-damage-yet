@@ -1,0 +1,35 @@
+$mask-opacity: dynamic(0.45);
+$mask-background-color: dynamic(rgb(0, 0, 6));
+$mask-page-opacity: dynamic(0.45);
+$mask-page-background-color: dynamic(rgb(0, 0, 6));
+
+.x-mask.x-loading-mask {
+  opacity: 1;
+  background-color: rgba(0, 0, 6, 0.45);
+
+  >.x-mask-inner {
+    border-radius: $awddy-radius-default;
+    background-color: rgba(0, 0, 4, 0.33);
+    padding: 1rem;
+
+    >.x-loading-spinner-outer {
+      height: 3.5rem;
+      transform: scale(1.25);
+
+      >.x-loading-spinner {
+        width: 16px;
+
+        > span {
+          margin-left: -0.51px;
+        }
+      }
+    }
+
+    >.x-mask-message {
+      bottom: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 200;
+      color: rgba(255, 255, 255, 0.55);
+    }
+  }
+}

@@ -1,0 +1,37 @@
+/* Overall dialog */
+$dialog-border-radius: $awddy-radius-default;
+$dialog-border-radius-big: $dialog-border-radius;
+
+/* Header sizing */
+$dialog-header-min-height: 2rem;
+$dialog-header-min-height-big: $dialog-header-min-height;
+$dialog-header-padding: 0.4375rem 0.5rem;
+$dialog-header-padding-big: $dialog-header-padding;
+$dialog-header-title-padding: 0;
+$dialog-header-title-padding-big: $dialog-header-title-padding;
+$dialog-header-border-color: $base-color;
+$dialog-header-border-style: solid;
+$dialog-header-border-width: 0 0 2px;
+
+.x-dialog > .x-dialogheader.x-docked-top {
+  border-width: $dialog-header-border-width !important;
+  border-style: $dialog-header-border-style !important;
+  border-color: $dialog-header-border-color !important;
+}
+
+/* Header colors / font-sizes */
+$dialog-header-background-color: $awddy-color-background-primary;
+$dialog-header-color: $color;
+$dialog-header-icon-color: $dialog-header-color;
+$dialog-header-font-size: $font-size;
+$dialog-header-font-size-big: $dialog-header-font-size;
+$dialog-header-font-weight: 600;
+$dialog-header-line-height: $line-height;
+$dialog-header-line-height-big: $dialog-header-line-height;
+$dialog-tool-color: $dialog-header-color;
+$dialog-tool-disabled-opacity: 0.67;
+
+/* Body */
+$dialog-body-padding: 0;
+$dialog-body-padding-big: $dialog-body-padding;
+$dialog-body-color: $awddy-color-foreground-tertiary;

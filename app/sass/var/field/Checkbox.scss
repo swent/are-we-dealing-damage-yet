@@ -1,0 +1,6 @@
+$checkboxfield-checkbox-color: #777;
+
+/* Custom disabled box label rule */
+.x-checkboxfield.x-disabled .x-box-label-el {
+  color: darken(opacify($disabled-color, 0.22), 3%);
+}

@@ -1,0 +1,24 @@
+$dataview-item-border-color: #d2d2d2;
+
+$panel-tool-size: 1rem;
+$panel-tool-size-big: $panel-tool-size;
+$panel-tool-font-size: $tool-font-size;
+$panel-tool-font-size-big: $tool-font-size-big;
+
+.x-grid .x-listitem {
+  border-color: $dataview-item-border-color;
+}
+
+.x-grid {
+  border-radius: 0;
+
+  .x-headercontainer {
+    .x-gridcolumn.mcs-plugin-highlightgridfilters-filtered > .x-header-el {
+      background-color: rgba(187, 222, 251, 0.6);
+    }
+  }
+
+  .x-grid-body-el .x-gridrow:first-child {
+    border-top-color: transparent;
+  }
+}

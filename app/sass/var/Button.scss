@@ -1,0 +1,53 @@
+$button-text-transform: unset;
+$button-border-radius: $awddy-radius-default;
+
+$button-background-color: saturate(lighten($base-color, 41%), 17%);
+$button-hovered-background-color: saturate(lighten($base-color, 33%), 17%);
+$button-focused-background-color: $button-hovered-background-color;
+$button-pressed-background-color: $base-color;
+
+$button-color: $color;
+$button-font-weight: 500;
+
+/* ##################################################
+   # Awddy textfield styles
+   ################################################## */
+
+/* Textfield-bordered */
+.x-textfield.awddy-textfield-bordered {
+  .x-input-wrap-el {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .x-underline-el {
+    display: none;
+  }
+}
+
+/* ##################################################
+   # Awddy button styles
+   ################################################## */
+
+/* Button-bordered */
+.x-button.awddy-button-bordered {
+  > .x-inner-el {
+    color: darken($base-color, 8%);
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    transition: border-color 0.25s 0s linear, color 0.25s 0s linear;
+    .x-icon-el {
+      color: inherit;
+    }
+  }
+  &.x-hovered > .x-inner-el {
+    color: darken($base-color, 16%);
+    border-color: rgba(0, 0, 0, 0.16);
+  }
+  &.x-pressing > .x-inner-el,
+  &.x-pressed > .x-inner-el {
+    color: $button-pressed-color;
+    border-color: $base-color;
+  }
+  &.x-disabled > .x-inner-el {
+    color: $button-disabled-color;
+    border-color: rgba(0, 0, 0, 0.11);
+  }
+}

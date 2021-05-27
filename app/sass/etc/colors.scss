@@ -1,0 +1,26 @@
+/* Base */
+$base-color-light: saturate(lighten($base-color, 10%), 26%);
+$base-color-dark: saturate(darken($base-color, 12%), 5%);
+
+/* Layouting */
+$awddy-color-foreground-primary: #333;
+$awddy-color-foreground-contrast: #000;
+$awddy-color-foreground-tertiary: #fff;
+
+$awddy-color-background-primary: #fff;
+$awddy-color-background-contrast: #f3f3f3;
+$awddy-color-background-tertiary: $base-color;
+
+$awddy-color-border-default: #ccc;
+$awddy-color-border-light: #ddd;
+
+/* Red Yellow Green */
+$awddy-color-green: rgb(0, 128, 0);
+$awddy-color-lightgreen: lighten($awddy-color-green, 13%);
+$awddy-color-darkgreen: darken($awddy-color-green, 13%);
+$awddy-color-yellow: rgb(216, 180, 0);
+$awddy-color-lightyellow: lighten($awddy-color-yellow, 13%);
+$awddy-color-darkyellow: darken($awddy-color-yellow, 13%);
+$awddy-color-red: #b44;
+$awddy-color-lightred: lighten($awddy-color-red, 13%);
+$awddy-color-darkred: darken($awddy-color-red, 13%);

@@ -26,13 +26,12 @@
   "overrides": ["app/overrides"],
 
   "sass": {
-    "namespace": "Awddy",
+    "namespace": "Ext",
 
     "etc": [
       "app/sass/etc/all.scss"
     ],
     "var": [
-      "app/sass/var/all.scss",
       "app/sass/var"
     ],
     "src": [

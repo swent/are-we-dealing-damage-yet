@@ -1,0 +1,29 @@
+.awddy-main-characterlist {
+  margin: 0.75rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: $awddy-radius-default;
+  box-shadow: 2px 2px 12px 1px #ccc;
+
+  .header {
+    padding: 0.5rem;
+    font-weight: 700;
+    border-bottom: 2px solid $base-color;
+  }
+
+  .toolbar {
+    border-bottom: 1px solid #ccc;
+
+    .createbutton .x-icon-el:before {
+      content: $awddy-widget-characterlist-createbutton-icon-content;
+    }
+  }
+
+  .list {
+    > .x-body-el {
+      > * {
+        border-bottom: 1px solid #ccc;
+      }
+    }
+  }
+}

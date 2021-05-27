@@ -1,0 +1,45 @@
+/*
+  FROM: https://unpkg.com/@blueprintjs/icons@3.19.0/lib/css/blueprint-icons.css
+
+  Copyright 2017-present Palantir Technologies, Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0.
+*/
+
+@font-face{
+  font-family: BlueprintJsIcons;
+  font-weight: normal;
+  font-style: normal;
+  src: url("fonts/blueprintjs-icons-16.eot?#iefix") format("embedded-opentype"),
+  url("fonts/blueprintjs-icons-16.woff") format("woff"),
+  url("fonts/blueprintjs-icons-16.ttf") format("truetype");
+}
+
+/*
+  Use ASCII notation for unicode icon content since browser caching without Content-Encoding can lead to unicode damage.
+  Use https://www.branah.com/unicode-converter to convert.
+
+  Example:
+     -> \ue64c -> \e64c (remove the u)
+ */
+
+/* Definitions */
+$awddy-icon-add-content: "\002b";
+$awddy-icon-edit-content: "\270e";
+$awddy-icon-delete-content: "\2717";
+$awddy-icon-menu-content: "\e762";
+$awddy-icon-list-content: "\e631";
+$awddy-icon-lock-content: "\e625";
+$awddy-icon-search-content: "\e64b";
+$awddy-icon-user-content: "\e627";
+$awddy-icon-help-content: "\003f";
+$awddy-icon-refresh-content: "\e643";
+$awddy-icon-expand-content: "\e696";
+$awddy-icon-close-content: "\2717";
+$awddy-icon-save-content: "\e6b7";
+$awddy-icon-tick-content: "\2713";
+$awddy-icon-previous-content: "\e694";
+$awddy-icon-next-content: "\e695";
+$awddy-icon-upload-content: "\e691";
+$awddy-icon-download-content: "\e62f";
+$awddy-icon-warning-sign-content: "\e647";
+$awddy-icon-issue-new-content: "\e775";

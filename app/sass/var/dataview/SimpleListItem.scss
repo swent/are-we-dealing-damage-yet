@@ -1,0 +1,6 @@
+/* Remove grid lines */
+$listitem-border-style: 'none';
+$listitem-border-width: 0;
+
+/* Without border we need stronger alt background color */
+$listitem-alt-background-color: #f7f7f7;

@@ -1,0 +1,20 @@
+/* Sizing */
+$gridcolumn-sort-icon-size: 1rem;
+$gridcolumn-sort-icon-size-big: $gridcolumn-sort-icon-size;
+$gridcolumn-sort-icon-font-size: 1rem;
+$gridcolumn-sort-icon-font-size-big: $gridcolumn-sort-icon-font-size;
+$gridcolumn-trigger-icon-font-size: 1rem;
+$gridcolumn-trigger-icon-font-size-big: $gridcolumn-trigger-icon-font-size;
+
+/* Colors */
+$gridcolumn-sort-icon-color: #666;
+$gridcolumn-trigger-icon-color: #666;
+
+/* Icons */
+$gridcolumn-sort-asc-icon: '\e6d5';
+$gridcolumn-sort-desc-icon: '\e6d6';
+$gridcolumn-trigger-icon: '\2304';
+$gridcolumn-menu-sort-asc-icon: $gridcolumn-sort-asc-icon;
+$gridcolumn-menu-sort-desc-icon: $gridcolumn-sort-desc-icon;
+$gridcolumn-menu-group-by-this-icon: '\e60a';
+$gridcolumn-menu-columns-icon: '\e7b9';

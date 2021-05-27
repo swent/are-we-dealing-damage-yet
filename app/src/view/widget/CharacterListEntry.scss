@@ -1,0 +1,38 @@
+.awddy-widget-characterlistentry {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+
+  .faction-icon-el {
+    width: 3rem;
+    height: 3rem;
+    background-image: url("icons/horde_128.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .name-el {
+    flex: 1;
+    margin: auto 0.25rem auto 0.5rem;
+    font-weight: 700;
+  }
+
+  .talents-el {
+    flex: 1;
+    margin: auto 0.25rem;
+    font-size: 0.875rem;
+    color: #555;
+  }
+
+  .date-el {
+    flex: 1;
+    margin: auto 0.5rem auto 0.25rem;
+    font-size: 0.875rem;
+    color: #555;
+  }
+
+  .button-el {
+    width: 2rem;
+    height: 2rem;
+  }
+}

@@ -1,0 +1,10 @@
+$menucheckitem-font-family: dynamic('Material Icons');
+$menucheckitem-checkbox-icon: 'check_box_outline_blank';
+$menucheckitem-checked-checkbox-icon: 'check_box';
+
+/* Workaround since using the extjs variable alone does nothing */
+.x-menucheckitem {
+  .x-checkbox-icon-el:before {
+    font-family: $menucheckitem-font-family;
+  }
+}
