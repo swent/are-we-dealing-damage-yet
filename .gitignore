@@ -3,6 +3,8 @@ build
 generatedFiles
 cordova
 node_modules
+desktop.json
+desktop.jsonp
 
 # Logs
 logs

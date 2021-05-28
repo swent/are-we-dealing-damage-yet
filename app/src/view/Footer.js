@@ -1,8 +1,8 @@
 Ext.define('Awddy.view.Footer', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Component',
     xtype: 'awddy.footer',
     classCls: 'awddy-footer',
 
-    // layout: 'fit',
-    items: []
+    html: 'lutz.heissenberger@gmail.com&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;version ' +
+        Ext.manifest.version.split('.').splice(0, 3).join('.'),
 });

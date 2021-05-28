@@ -5,17 +5,24 @@ Ext.define('Awddy.Application', {
 		'Awddy.*',
 		'Ext.layout.*',
 	],
-	// defaultToken: 'homeview',
 
-	removeSplash: function () {
-		Ext.getBody().removeCls('launching')
-		var elem = document.getElementById("splash")
-		elem.parentNode.removeChild(elem)
+	async launch() {
+		await this.initializeViewport();
 	},
 
-	launch: function () {
-		this.removeSplash();
-		Ext.Viewport.add([{ xtype: 'awddy.viewport' }])
+	async initializeViewport() {
+		await this.removeSplash();
+		Ext.Viewport.add([{ xtype: 'awddy.viewport' }]);
+	},
+
+	async removeSplash() {
+		return new Promise((resolve) => {
+			Ext.getBody().removeCls('launching');
+			const splash = document.getElementById('splash');
+
+			setTimeout(() => splash.parentNode.removeChild(splash), 400);
+			setTimeout(() => resolve(), 100);
+		});
 	},
 
 	onAppUpdate: function () {

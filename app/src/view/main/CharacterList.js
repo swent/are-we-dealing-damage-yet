@@ -29,13 +29,24 @@ Ext.define('Awddy.view.main.CharacterList', {
         xtype: 'grid',
         reference: 'grid',
         cls: 'grid',
+        flex: 1,
         store: {
             type: 'awddy.characters',
         },
         columns: [{
             text: 'Faction',
             dataIndex: 'faction',
-            width: 70,
+            width: Ext.os.is.Phone ? 50 : 70,
+            renderer: (record, value) => `<img width="${
+                    Ext.os.is.Phone ? 34 : 48
+                }" height="${
+                    Ext.os.is.Phone ? 34 : 48
+                }" src="resources/icons/${
+                    value === 0 ? 'alliance' : 'horde'
+                }-128.png" />`,
+            cell: {
+                encodeHtml: false,
+            },
         }, {
             text: 'Name',
             dataIndex: 'name',
@@ -43,15 +54,19 @@ Ext.define('Awddy.view.main.CharacterList', {
         }, {
             text: 'Talents',
             dataIndex: 'talents',
-            width: 100,
+            width: Ext.os.is.Phone ? 70 : 100,
+            renderer: (value, record) => {
+                return Awddy.util.DisplayHelper.getTalentDisplayString(value);
+            },
         }, {
             text: 'Last DPS',
             dataIndex: 'dps',
             width: 100,
+            hidden: Ext.os.is.Phone,
         }, {
             text: 'Last Change',
             dataIndex: 'changeDate',
-            width: 100,
+            width: Ext.os.is.Phone ? 95 : 100,
         }],
     }],
 });

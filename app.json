@@ -1,7 +1,7 @@
 {
   "name": "Awddy",
   "namespace": "Awddy",
-  "version": "1.0.0.0",
+  "version": "0.1.1.0",
   "framework": "ext",
   "template": "moderndesktop",
   "indexHtmlPath": "index.html",
@@ -46,11 +46,15 @@
   "output": {
     "base": "${workspace.build.dir}/${build.environment}/${app.name}",
     "page": "index.html",
-    "manifest": "generatedFiles/${build.id}.json",
-    "js": "generatedFiles/${build.id}/app.js",
+    "manifest": "${build.id}.json",
+    "js": {
+      "path": "app.js",
+      "version": "ES6"
+    },
     "appCache": {"enable": false},
-    "resources": {
-      "shared": "resources"
+    "resources": "resources",
+    "slicer": {
+      "enable": false
     }
   },
 
@@ -91,7 +95,7 @@
       }
     },
     "loader": {
-      "cache": "${build.timestamp}"
+      "cache": true
     },
     "cache": {
       "enable": true
@@ -118,7 +122,7 @@
 
   "bootstrap": {
     "base": "${app.dir}",
-    "manifest": "generatedFiles/${build.id}.json",
+    "manifest": "${build.id}.json",
     "microloader": "generatedFiles/bootstrap.js",
     "css": "generatedFiles/bootstrap.css"
   },

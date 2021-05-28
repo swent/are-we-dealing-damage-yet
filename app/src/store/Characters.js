@@ -10,7 +10,7 @@ Ext.define('Awddy.store.Characters', {
         },
     },
 
-    date: [{
+    data: [{
         faction: 0,
         name: 'Svnt',
         talents: 0,
