@@ -8,6 +8,11 @@ Ext.define('Awddy.Application', {
 
 	async launch() {
 		await this.initializeViewport();
+
+		const hash = '6d6d6d04svnt09540c80011aabbcc9911aabbcc11aabbcc9911aabbcc9911aabbcc9911aabbcc9911aabbcc9911aabbcc11aabbcc9911aabbcc9911aa9911aa9911aa11aa11aabbcc9911aabbcc991100';
+
+		const char = Awddy.model.Character.fromHash(hash);
+		console.log(char);
 	},
 
 	async initializeViewport() {

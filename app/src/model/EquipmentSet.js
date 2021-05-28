@@ -1,0 +1,23 @@
+Ext.define('Awddy.model.EquipmentSet', {
+    extend: 'Ext.data.Model',
+    alias : 'model.awddy.equipmentset',
+    fields: [
+        { name: 'head' },
+        { name: 'neck' },
+        { name: 'shoulder' },
+        { name: 'back' },
+        { name: 'chest' },
+        { name: 'wrist' },
+        { name: 'hands' },
+        { name: 'waist' },
+        { name: 'legs' },
+        { name: 'feet' },
+        { name: 'ring1' },
+        { name: 'ring2' },
+        { name: 'trinket1' },
+        { name: 'trinket2' },
+        { name: 'mainHand' },
+        { name: 'offHand' },
+        { name: 'totem' },
+    ],
+});
