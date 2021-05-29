@@ -1,0 +1,17 @@
+{
+  "1234": {
+    "_name": "the deviant set",
+    "2": {
+      "stats": {
+        "strength": 2
+      },
+      "procs": {}
+    },
+    "4": {
+      "stats": {
+        "agility": 8
+      },
+      "procs": {}
+    }
+  }
+}

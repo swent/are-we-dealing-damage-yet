@@ -6,6 +6,12 @@ node_modules
 desktop.json
 desktop.jsonp
 
+# awddy
+resources/json/items.json
+resources/json/item-sets.json
+resources/icons/items/
+app/sass/etc/app/item-icons.scss
+
 # Logs
 logs
 *.log

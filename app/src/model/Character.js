@@ -13,7 +13,31 @@ Ext.define('Awddy.model.Character', {
     ],
 
     getHash() {
-
+        return this.data.id +
+            Awddy.util.HashHelper.nameToHash(this.data.name) +
+            Awddy.util.HashHelper.dpsToHash(this.data.dps) +
+            Awddy.util.HashHelper.dateToHash(this.data.changeDate) +
+            Awddy.util.HashHelper.raceToHash(this.data.race) +
+            this.data.talents.toString(16) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.head, 3, true) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.neck, 3, false) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.shoulder, 3, true) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.back, 3, true) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.chest, 3, true) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.wrist, 3, true) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.hands, 3, true) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.waist, 3, false) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.legs, 3, true) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.feet, 3, true) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.finger1, 1, true) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.finger2, 1, true) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.trinket1, 1, false) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.trinket2, 1, false) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.mainHand, 3, true) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.offHand, 3, true) +
+            Awddy.util.HashHelper.itemToHash(this.data.equipmentSet.data.totem, 0, false) +
+            Awddy.util.HashHelper.opponentToHash(this.data.opponent) +
+            Awddy.util.HashHelper.encounterTypeToHash(this.data.encounterType);
     },
 
     statics: {
@@ -38,8 +62,8 @@ Ext.define('Awddy.model.Character', {
                     waist: Awddy.util.HashHelper.hashToItem(parsed.slotWaist, 3, false),
                     legs: Awddy.util.HashHelper.hashToItem(parsed.slotLegs, 3, true),
                     feet: Awddy.util.HashHelper.hashToItem(parsed.slotFeet, 3, true),
-                    ring1: Awddy.util.HashHelper.hashToItem(parsed.slotRing1, 1, true),
-                    ring2: Awddy.util.HashHelper.hashToItem(parsed.slotRing2, 1, true),
+                    finger1: Awddy.util.HashHelper.hashToItem(parsed.slotFinger1, 1, true),
+                    finger2: Awddy.util.HashHelper.hashToItem(parsed.slotFinger2, 1, true),
                     trinket1: Awddy.util.HashHelper.hashToItem(parsed.slotTrinket1, 1, false),
                     trinket2: Awddy.util.HashHelper.hashToItem(parsed.slotTrinket2, 1, false),
                     mainHand: Awddy.util.HashHelper.hashToItem(parsed.slotMainHand, 3, true),

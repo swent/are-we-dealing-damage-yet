@@ -10,24 +10,24 @@ Ext.define('Awddy.util.HashHelper', {
         race: 15,
         talents: 16,
         slotHead: 17,
-        slotNeck: 27,
-        slotShoulder: 35,
-        slotBack: 45,
-        slotChest: 55,
-        slotWrist: 65,
-        slotHands: 75,
-        slotWaist: 85,
-        slotLegs: 93,
-        slotFeet: 103,
-        slotRing1: 113,
-        slotRing2: 119,
-        slotTrinket1: 125,
-        slotTrinket2: 129,
-        slotMainHand: 133,
-        slotOffHand: 143,
-        slotTotem: 153,
-        opponent: 155,
-        encounterType: 156,
+        slotNeck: 28,
+        slotShoulder: 37,
+        slotBack: 48,
+        slotChest: 59,
+        slotWrist: 70,
+        slotHands: 81,
+        slotWaist: 92,
+        slotLegs: 101,
+        slotFeet: 112,
+        slotFinger1: 123,
+        slotFinger2: 130,
+        slotTrinket1: 137,
+        slotTrinket2: 142,
+        slotMainHand: 147,
+        slotOffHand: 158,
+        slotTotem: 169,
+        opponent: 172,
+        encounterType: 173,
     },
 
     _raceMapping: {
@@ -51,23 +51,23 @@ Ext.define('Awddy.util.HashHelper', {
               date = hash.substr(this._hashIndex.date + nameLen, 3),
               race = hash.substr(this._hashIndex.race + nameLen, 1),
               talents = hash.substr(this._hashIndex.talents + nameLen, 1),
-              slotHead = hash.substr(this._hashIndex.slotHead + nameLen, 10),
-              slotNeck = hash.substr(this._hashIndex.slotNeck + nameLen, 8),
-              slotShoulder = hash.substr(this._hashIndex.slotShoulder + nameLen, 10),
-              slotBack = hash.substr(this._hashIndex.slotBack + nameLen, 10),
-              slotChest = hash.substr(this._hashIndex.slotChest + nameLen, 10),
-              slotWrist = hash.substr(this._hashIndex.slotWrist + nameLen, 10),
-              slotHands = hash.substr(this._hashIndex.slotHands + nameLen, 10),
-              slotWaist = hash.substr(this._hashIndex.slotWaist + nameLen, 8),
-              slotLegs = hash.substr(this._hashIndex.slotLegs + nameLen, 10),
-              slotFeet = hash.substr(this._hashIndex.slotFeet + nameLen, 10),
-              slotRing1 = hash.substr(this._hashIndex.slotRing1 + nameLen, 6),
-              slotRing2 = hash.substr(this._hashIndex.slotRing2 + nameLen, 6),
-              slotTrinket1 = hash.substr(this._hashIndex.slotTrinket1 + nameLen, 4),
-              slotTrinket2 = hash.substr(this._hashIndex.slotTrinket2 + nameLen, 4),
-              slotMainHand = hash.substr(this._hashIndex.slotMainHand + nameLen, 10),
-              slotOffHand = hash.substr(this._hashIndex.slotOffHand + nameLen, 10),
-              slotTotem = hash.substr(this._hashIndex.slotTotem + nameLen, 2),
+              slotHead = hash.substr(this._hashIndex.slotHead + nameLen, 11),
+              slotNeck = hash.substr(this._hashIndex.slotNeck + nameLen, 9),
+              slotShoulder = hash.substr(this._hashIndex.slotShoulder + nameLen, 11),
+              slotBack = hash.substr(this._hashIndex.slotBack + nameLen, 11),
+              slotChest = hash.substr(this._hashIndex.slotChest + nameLen, 11),
+              slotWrist = hash.substr(this._hashIndex.slotWrist + nameLen, 11),
+              slotHands = hash.substr(this._hashIndex.slotHands + nameLen, 11),
+              slotWaist = hash.substr(this._hashIndex.slotWaist + nameLen, 9),
+              slotLegs = hash.substr(this._hashIndex.slotLegs + nameLen, 11),
+              slotFeet = hash.substr(this._hashIndex.slotFeet + nameLen, 11),
+              slotFinger1 = hash.substr(this._hashIndex.slotFinger1 + nameLen, 7),
+              slotFinger2 = hash.substr(this._hashIndex.slotFinger2 + nameLen, 7),
+              slotTrinket1 = hash.substr(this._hashIndex.slotTrinket1 + nameLen, 5),
+              slotTrinket2 = hash.substr(this._hashIndex.slotTrinket2 + nameLen, 5),
+              slotMainHand = hash.substr(this._hashIndex.slotMainHand + nameLen, 11),
+              slotOffHand = hash.substr(this._hashIndex.slotOffHand + nameLen, 11),
+              slotTotem = hash.substr(this._hashIndex.slotTotem + nameLen, 3),
               opponent = hash.substr(this._hashIndex.opponent + nameLen, 1),
               encounterType = hash.substr(this._hashIndex.encounterType + nameLen, 1);
 
@@ -88,8 +88,8 @@ Ext.define('Awddy.util.HashHelper', {
             slotWaist,
             slotLegs,
             slotFeet,
-            slotRing1,
-            slotRing2,
+            slotFinger1,
+            slotFinger2,
             slotTrinket1,
             slotTrinket2,
             slotMainHand,
@@ -141,17 +141,17 @@ Ext.define('Awddy.util.HashHelper', {
 
     hashToItem(hash, sockets, enchant) {
         return {
-            itemId: parseInt('0x' + hash.substr(0, 2)),
-            gem1Id: sockets >= 1 ? parseInt('0x' + hash.substr(2, 2)) : null,
-            gem2Id: sockets >= 2 ? parseInt('0x' + hash.substr(4, 2)) : null,
-            gem3Id: sockets >= 3 ? parseInt('0x' + hash.substr(6, 2)) : null,
-            enchantId: enchant ? parseInt('0x' + hash.substr(2 + sockets * 2, 2)) : null,
+            itemId: parseInt('0x' + hash.substr(0, 3)),
+            gem1Id: sockets >= 1 ? parseInt('0x' + hash.substr(3, 2)) : null,
+            gem2Id: sockets >= 2 ? parseInt('0x' + hash.substr(5, 2)) : null,
+            gem3Id: sockets >= 3 ? parseInt('0x' + hash.substr(7, 2)) : null,
+            enchantId: enchant ? parseInt('0x' + hash.substr(3 + sockets * 2, 2)) : null,
         };
     },
 
     itemToHash(item, sockets, enchant) {
         return `${
-            this.makeSureIsLength(item.itemId.toString(16), 2)
+            this.makeSureIsLength(item.itemId.toString(16), 3)
         }${
             sockets >= 1 ? this.makeSureIsLength(item.gem1Id.toString(16), 2) : ''
         }${
@@ -174,7 +174,7 @@ Ext.define('Awddy.util.HashHelper', {
     opponentToHash(opponent) {
         const result = Object
             .keys(this._opponentMapping)
-            .find(hash => this._raceMapping[hash] === opponent);
+            .find(hash => this._opponentMapping[hash] === opponent);
         if (!result) {
             throw new Error('opponent invalid: ' + opponent);
         }

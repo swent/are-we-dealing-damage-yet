@@ -1,7 +1,7 @@
 {
   "name": "awddy",
   "version": "0.1.0",
-  "description": "awddy description for Ext JS app Awddy",
+  "description": "A world of warcraft enhancement shaman dps simulation engine to optimize equipment",
   "repository": {
     "type": "git",
     "url": "https://github.com/swent/are-we-dealing-damage-yet"
@@ -10,7 +10,9 @@
     "World of Warcraft",
     "DPS",
     "Shaman",
-    "Simulation"
+    "Enhancement",
+    "Simulation",
+    "Calculation"
   ],
   "author": "swent",
   "license": "MIT",
@@ -18,11 +20,14 @@
     "url": "https://github.com/swent/are-we-dealing-damage-yet/issues"
   },
   "scripts": {
+    "crawl-items": "node item-downloader/wowhead-crawler.js",
+    "integrate-items": "node integrate-items-from-downloader.js",
+    "update-items": "npm run crawl-items && npm run integrate-items",
     "start": "npm run dev",
     "clean": "rimraf build && rimraf dist",
     "dev": "webpack-dev-server --env.profile=desktop --env.verbose=no --env.port=8080 --env.browser=no",
-    "build": "npm run clean && cross-env webpack --env.profile=desktop --env.environment=production --env.treeshake=yes",
-    "build:testing": "npm run clean && cross-env webpack --env.profile=desktop --env.treeshake=yes --env.cmdopts=--testing"
+    "build": "npm run update-items && npm run clean && cross-env webpack --env.profile=desktop --env.environment=production --env.treeshake=yes",
+    "build:testing": "npm run update-items && npm run clean && cross-env webpack --env.profile=desktop --env.treeshake=yes --env.cmdopts=--testing"
   },
   "dependencies": {
     "@sencha/ext": "~7.4.0",

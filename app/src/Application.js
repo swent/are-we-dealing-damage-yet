@@ -5,14 +5,17 @@ Ext.define('Awddy.Application', {
 		'Awddy.*',
 		'Ext.layout.*',
 	],
+	stores: [
+		'Awddy.store.Items',
+	],
 
 	async launch() {
 		await this.initializeViewport();
 
-		const hash = '6d6d6d04svnt09540c80011aabbcc9911aabbcc11aabbcc9911aabbcc9911aabbcc9911aabbcc9911aabbcc9911aabbcc11aabbcc9911aabbcc9911aa9911aa9911aa11aa11aabbcc9911aabbcc991100';
-
+		const hash = '6d6d6d04svnt09540c800111aabbcc99111aabbcc111aabbcc99111aabbcc99111aabbcc99111aabbcc99111aabbcc99111aabbcc111aabbcc99111aabbcc99111aa99111aa99111aa111aa111aabbcc99111aabbcc9911100';
 		const char = Awddy.model.Character.fromHash(hash);
-		console.log(char);
+		const compareHash = char.getHash();
+		console.log(char, hash === compareHash);
 	},
 
 	async initializeViewport() {
