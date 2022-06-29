@@ -30,9 +30,7 @@ Ext.define('Awddy.view.main.CharacterList', {
         reference: 'grid',
         cls: 'grid',
         flex: 1,
-        store: {
-            type: 'awddy.characters',
-        },
+        store: 'Awddy.store.Characters',
         columns: [{
             text: 'Faction',
             dataIndex: 'faction',

@@ -1,44 +1,75 @@
 {
   "head": [
-
+    "https://tbc.wowhead.com/item=28224/wastewalker-helm",
+    "https://tbc.wowhead.com/item=28182/helm-of-the-claw",
+    "https://tbc.wowhead.com/item=31109/stealthers-helmet-of-second-sight"
   ],
   "neck": [
-
+    "https://tbc.wowhead.com/item=29381/choker-of-vile-intent",
+    "https://tbc.wowhead.com/item=31695/natashas-choker",
+    "https://tbc.wowhead.com/item=27546/traitors-noose"
   ],
   "shoulder": [
-
+    "https://tbc.wowhead.com/item=27797/wastewalker-shoulderpads",
+    "https://tbc.wowhead.com/item=27434/mantle-of-perenolde",
+    "https://tbc.wowhead.com/item=25790/expedition-scouts-epaulets"
   ],
   "back": [
-
+    "https://tbc.wowhead.com/item=24259/vengeance-wrap",
+    "https://tbc.wowhead.com/item=27878/auchenai-death-shroud",
+    "https://tbc.wowhead.com/item=27892/cloak-of-the-inciter"
   ],
   "chest": [
-
+    "https://tbc.wowhead.com/item=29525/primalstrike-vest",
+    "https://tbc.wowhead.com/item=29515/ebon-netherscale-breastplate",
+    "https://tbc.wowhead.com/item=25997/gladiators-linked-armor"
   ],
   "wrist": [
-
+    "https://tbc.wowhead.com/item=29527/primalstrike-bracers",
+    "https://tbc.wowhead.com/item=29517/ebon-netherscale-bracers",
+    "https://tbc.wowhead.com/item=28171/spymistresss-wristguards",
+    "https://tbc.wowhead.com/item=30399/nightstalkers-wristguards"
   ],
   "hands": [
-
+    "https://tbc.wowhead.com/item=30341/flesh-handlers-gauntlets",
+    "https://tbc.wowhead.com/item=29503/cobrascale-gloves",
+    "https://tbc.wowhead.com/item=28396/gloves-of-the-unbound"
   ],
   "waist": [
-
+    "https://tbc.wowhead.com/item=29526/primalstrike-belt",
+    "https://tbc.wowhead.com/item=29516/ebon-netherscale-belt",
+    "https://tbc.wowhead.com/item=29247/girdle-of-the-deathdealer",
+    "https://tbc.wowhead.com/item=27911/epochs-whispering-cinch"
   ],
   "legs": [
-
+    "https://tbc.wowhead.com/item=30257/shattrath-leggings",
+    "https://tbc.wowhead.com/item=31544/clefthoof-hide-leggings"
   ],
   "feet": [
-
+    "https://tbc.wowhead.com/item=25686/fel-leather-boots",
+    "https://tbc.wowhead.com/item=27867/boots-of-the-unjust",
+    "https://tbc.wowhead.com/item=30401/farahlite-studded-boots"
   ],
   "finger": [
-
+    "https://tbc.wowhead.com/item=30834/shapeshifters-signet",
+    "https://tbc.wowhead.com/item=29379/ring-of-arathi-warlords",
+    "https://tbc.wowhead.com/item=28323/ring-of-umbral-doom",
+    "https://tbc.wowhead.com/item=31077/slayers-mark-of-the-redemption"
   ],
   "trinket": [
-
+    "https://tbc.wowhead.com/item=29383/bloodlust-brooch",
+    "https://tbc.wowhead.com/item=28034/hourglass-of-the-unraveller",
+    "https://tbc.wowhead.com/item=28288/abacus-of-violent-odds"
   ],
   "melee": [
-
+    "https://tbc.wowhead.com/item=28438/dragonmaw",
+    "https://tbc.wowhead.com/item=28437/drakefist-hammer",
+    "https://tbc.wowhead.com/item=28305/gladiators-pummeler",
+    "https://tbc.wowhead.com/item=28308/gladiators-cleaver",
+    "https://tbc.wowhead.com/item=28392/reflex-blades",
+    "https://tbc.wowhead.com/item=27872/the-harvester-of-souls"
   ],
   "ranged": [
-
+    "https://tbc.wowhead.com/item=27815/totem-of-the-astral-winds"
   ]
 }
